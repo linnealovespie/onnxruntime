@@ -9,3 +9,11 @@ steps:
     workingDirectory: $(Build.BinariesDirectory)
   continueOnError: true
   condition: always()
+
+
+- task: CmdLine@2
+  displayName: 'Create models link'
+  inputs:
+    script: |
+      ln -s /data/models models
+    workingDirectory: $(Build.BinariesDirectory)  
